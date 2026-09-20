@@ -1,33 +1,23 @@
-# Labs
+Bash Battle Arena : Level 1
 
-Document your completed labs here.
+# Objective:
 
-## Template
+Create a directory named "Arena" and then inside it, create three files: warrior.txt, mage.txt, and archer.txt. List the contents of the Arena directory.
 
-When documenting a lab, include:
+## Commands used
 
-```markdown
-# Lab: [Lab Name]
+mkdir Arena
 
-## Objective
+cd Arena
 
-What was the goal?
+touch warrior.txt mage.txt archer.txt 
 
-## Commands Used
-
-(the commands you ran)
+ls
 
 ## Output
 
-(what happened)
+<img width="304" height="226" alt="image" src="https://github.com/user-attachments/assets/a762a7b8-5666-41ad-ae56-fcc470c19cae" />
 
-## Challenges
-
-Any issues you hit and how you solved them.
-
-## What I Learned
-
-Key takeaways from this lab.
 ```
 
 ## Completed Labs
