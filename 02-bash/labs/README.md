@@ -75,3 +75,48 @@ fi
 <img width="194" height="47" alt="image" src="https://github.com/user-attachments/assets/c7cf12fe-8deb-4869-a6c1-c934290a6f8a" />
 
 
+## Challenge 2: File Operations Script
+Create a script that automates directory and file creation.
+
+Requirements:
+-Create a directory called bash_demo
+-Navigate into the directory
+-Create a file called demo.txt
+-Write text to the file (include current date)
+-Display the file contents
+
+-Example output:
+
+-Directory 'bash_demo' created. File 'demo.txt' created.
+
+-File contents: This file was created by a Bash script on 2024-11-29
+
+## Commands used
+```bash
+❯ vim ops.sh
+❯ chmod +x ops.sh
+❯ ./ops.sh
+
+```
+## Script
+```bash
+#!/bin/bash
+
+mkdir bash_demo
+
+touch bash_demo/demo.txt
+
+echo "This file was created by a Bash script on 2026-09-23" > bash_demo/demo.txt
+
+echo "Directory 'bash_demo' created. File 'demo.txt' created."
+
+cat demo.txt
+
+```
+
+Output
+
+<img width="358" height="120" alt="image" src="https://github.com/user-attachments/assets/971f06ac-e2f0-4c2f-b9eb-d70cab35906d" />
+
+
+
