@@ -44,3 +44,34 @@ done
 ## Output: 
 
 <img width="265" height="200" alt="image" src="https://github.com/user-attachments/assets/c84f28ba-2b18-41da-8f8d-d7b17b0f1025" />
+
+# Bash Battle Arena : Level 3 (Conditional statements)
+
+## Mission:
+
+Write a script that checks if a file named hero.txt exists in the Arena directory. If it does, print Hero found!; otherwise, print Hero missing!.
+
+## Commands used
+```bash
+vim fine-hero.sh
+chmod +x find-hero.sh
+./find-hero.sh
+
+```
+## Script
+```bash
+#!/bin/bash
+if [ -f /home/omar/Arena/hero.txt ]; then
+
+        echo "Hero Found ! "
+
+else
+        echo "Hero Missing !"
+fi
+
+```
+## Output: 
+
+<img width="194" height="47" alt="image" src="https://github.com/user-attachments/assets/c7cf12fe-8deb-4869-a6c1-c934290a6f8a" />
+
+
