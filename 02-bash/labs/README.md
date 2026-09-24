@@ -74,6 +74,52 @@ fi
 
 <img width="194" height="47" alt="image" src="https://github.com/user-attachments/assets/c7cf12fe-8deb-4869-a6c1-c934290a6f8a" />
 
+## Challenge 1: Basic Arithmetic Calculator
+
+Create a script that takes two numbers as input and performs basic arithmetic operations (addition, subtraction, multiplication, division).
+
+Requirements:
+-Prompt user for two numbers
+-Perform all four operations
+-Display the results
+-Handle division by zero
+
+## Commands used
+```bash
+vim ari-calc.sh
+chmod +x ari-calc.sh
+./ari-calc.sh
+```
+## Script
+```bash
+#!/bin/bash
+
+read -p "Enter the first number: " num1
+
+read -p "Enter the second number: " num2
+
+echo "$num1 + $num2= $((num1 + num2))"
+echo "$num1 - $num2= $((num1 - num2))"
+echo "$num1 × $num2= $((num1 * num2))"
+
+if  [ "$num2" -ne 0 ]; then
+    echo "$num1 ÷ $num2= $((num1 / num2))"
+else
+    echo "Division: Cannot divide by zero"
+fi
+```
+Output:
+
+<img width="650" height="173" alt="image" src="https://github.com/user-attachments/assets/7c3a792e-7693-4f77-af3e-3956ce48ec59" />
+<img width="687" height="169" alt="image" src="https://github.com/user-attachments/assets/784b55ae-d77c-4e39-a329-51d8970ed4f6" />
+
+
+
+
+
+
+
+
 
 ## Challenge 2: File Operations Script
 Create a script that automates directory and file creation.
