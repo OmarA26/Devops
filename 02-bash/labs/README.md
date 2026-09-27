@@ -229,6 +229,7 @@ If it exists, check if it's readable, writable, and executable
 Display appropriate messages for each permission
 
 ## Commands used :
+```bash
 vim checker.sh
 chmod +x checker.sh
 ./checker.sh
@@ -272,3 +273,45 @@ fi
 
 <img width="622" height="145" alt="image" src="https://github.com/user-attachments/assets/721607e0-333a-4f27-8072-f5ee147d9be3" />
 
+
+# Challenge 4: Backup Script for Text Files
+
+Create a script that backs up all .txt files from one directory to another.
+
+Requirements:
+-Prompt user for source directory
+-Create a backup directory if it doesn't exist
+-Copy all .txt files to the backup directory
+-Add timestamp to backup directory name
+-Display count of files backed up
+
+## Commands used :
+```bash
+vim back.sh
+chmod +x back.sh
+./back.sh
+```
+## Script
+```bash
+
+#!/bin/bash
+
+
+read -p "What is the source Directory?" source
+
+mkdir -p Backup
+
+cp "$source"/*.txt Backup/
+
+timestamp=$(date +%Y%m%d_%H%M%S)
+backup="Backup_$timestamp"
+
+txt_files=("$source"/*.txt)
+count=${#txt_files[@]}
+
+echo "$count files backed up."
+
+```
+## Output:
+
+<img width="341" height="62" alt="image" src="https://github.com/user-attachments/assets/0dc9b9c5-d3ba-42e1-b23a-f4ddcb698f17" />
