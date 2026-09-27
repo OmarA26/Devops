@@ -134,6 +134,93 @@ ls Battlefield Archive
 
 <img width="631" height="168" alt="image" src="https://github.com/user-attachments/assets/20cf676d-4420-432c-82c2-8d995ce8c8e8" />
 
+# Level 6: Argument Parsing
+
+## Objective:
+Mission: Write a script that accepts a filename as an argument and prints the number of lines in that file. If no filename is provided, display a message saying 'No file provided'.
+
+
+## Commands used
+```bash
+vim arg-file.sh
+chmod +x arg-file.sh
+./arg-file.sh
+
+```
+## Script
+```bash
+#!/bin/bash
+
+filename=$1
+
+
+lines=$(wc -l < "$filename")
+
+echo " Number of lines in this file : $lines"
+
+```
+
+## Output
+<img width="297" height="33" alt="image" src="https://github.com/user-attachments/assets/a98a07a5-711f-4315-9050-c83b75ea120f" />
+
+# Level 7: File Sorting Script
+
+
+## Objective:
+
+
+Mission: Write a script that sorts all .txt files in a directory by their size, from smallest to largest, and displays the sorted list.
+
+## Commands used
+```bash
+vim sort.sh
+chmod +x sort.sh
+./sort.sh
+
+```
+## Script
+
+```bash
+#!/bin/bash
+
+list=$(ls -lSr *.txt)
+
+echo " $list "
+
+```
+##Output
+
+<img width="426" height="161" alt="image" src="https://github.com/user-attachments/assets/7fe6be7c-aca5-4813-850e-b5b70b5817f8" />
+
+Level 8: Multi-File Searcher
+## Objective:
+Mission: Create a script that searches for a specific word or phrase across all .log files in a directory and outputs the names of the files that contain the word or phrase.
+
+
+## Commands used
+```bash
+vim log.sh
+chmod +x log.sh
+./log.sh
+```
+## Script
+```bash
+#!/bin/bash
+
+read -p "Which directory would you like to search for log files in?" directory
+
+read -p "What word are you searching for " word
+
+grep -l "$word"  "$directory"/*.log
+
+```
+
+##Output
+<img width="469" height="91" alt="image" src="https://github.com/user-attachments/assets/573d78f7-f493-46c3-83a8-013d92e15eaf" />
+
+
+
+
 
 # Challenge 1: Basic Arithmetic Calculator
 
