@@ -218,7 +218,96 @@ grep -l "$word"  "$directory"/*.log
 ##Output
 <img width="469" height="91" alt="image" src="https://github.com/user-attachments/assets/573d78f7-f493-46c3-83a8-013d92e15eaf" />
 
+# Level 9: Script to Monitor Directory Changes
+## Objective:
 
+Mission: Write a script that monitors a directory for any changes (file creation, modification, or deletion) and logs the changes with a timestamp.
+
+## Commands used
+```bash
+vim monitor.sh
+chmod +x monitor.sh
+./monitor.sh
+```
+## Script
+```bash
+#!/bin/bash
+
+read -p "Which directory would you like to monitor? " directory
+
+if [ ! -d "$directory" ]; then
+    echo "Directory does not exist."
+    exit 1
+fi
+
+echo "Monitoring $directory..."
+echo "Press Ctrl+C to stop."
+
+inotifywait -m -e create -e modify -e delete "$directory" |
+while read path action file
+do
+    timestamp=$(date "+%Y-%m-%d %H:%M:%S")
+    echo "[$timestamp] $action $file" >> changes.log
+done
+
+
+```
+
+##Output
+<img width="391" height="93" alt="image" src="https://github.com/user-attachments/assets/34b15b2e-335b-4282-b42f-b890694f8bf5" />
+
+# Level 10: Boss Battle 2 - Intermediate Scripting
+## Objective:
+Mission: Write a script that:
+
+1. Creates a directory called Arena_Boss.
+2. Creates 5 text files inside the directory, named file1.txt to file5.txt.
+3. Generates a random number of lines (between 10 and 20) in each file.
+4. Sorts these files by their size and displays the list.
+5. Checks if any of the files contain the word 'Victory', and if found, moves the file to a directory called Victory_Archive.
+## Commands used
+```bash
+vim i-scrpit.sh
+chmod +x i-script
+./i-script.sh
+```
+## Script
+```bash
+#!/bin/bash
+
+mkdir -p Arena_Boss
+
+touch Arena_Boss/file{1..5}.txt
+
+for file in Arena_Boss/file{1..5}.txt
+do
+    lines=$((RANDOM % 11 + 10))
+
+    for ((i=1; i<=lines; i++))
+    do
+        echo "This is line $i" >> "$file"
+    done
+done
+
+list=$(ls -lSr Arena_Boss/*.txt)
+
+echo " $list "
+
+
+mkdir -p Victory_Archive
+
+for file in Arena_Boss/*.txt
+do
+    if grep -q "Victory" "$file"; then
+        echo "Found Victory in: $file"
+        mv "$file" Victory_Archive/
+    fi
+done
+
+```
+
+##Output
+<img width="466" height="236" alt="image" src="https://github.com/user-attachments/assets/243d05d4-5296-4ce0-8b1a-c2a405974b78" />
 
 
 
